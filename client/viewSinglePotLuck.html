@@ -1,0 +1,23 @@
+<template name="viewSinglePotLuck">
+	<head>
+	  <meta name="apple-mobile-web-app-capable" content="yes" />
+	  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	  <title>PotLuck</title>
+	</head>
+
+	<body>
+		<a href="/">back</a>
+	  <h1>{{details.name}} on {{details.eventDate}}</h1>
+	
+	{{> listoffood}}
+
+
+
+	<form id="bringfood">
+		<label>I am bringing : </label>
+		<input type="text" id="food">
+		<input type="submit" value="Food!">
+	</form>
+
+	</body>
+</template>
