@@ -1,2 +1,1 @@
-console.log('app');
-console.log('hello two');
+Potlucks = new Mongo.Collection("potlucks");

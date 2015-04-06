@@ -1,16 +1,16 @@
-<head>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>PotLuck</title>
-</head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+<template name="HomePage">
+	<head>
+	  <meta name="apple-mobile-web-app-capable" content="yes" />
+	  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	  <title>PotLuck</title>
+	</head>
 
-  {{> hello}}
-</body>
+	<body>
+	  <h1>Potlucks!</h1>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+	  <button id="NewPotLuckBtn">New Potluck!</button>
+		
+	  {{> potlucklist}}
+	</body>
 </template>
