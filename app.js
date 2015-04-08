@@ -1,1 +1,1 @@
-console.log('app');
+Potlucks = new Mongo.Collection("potlucks");

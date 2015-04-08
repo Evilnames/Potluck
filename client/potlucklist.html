@@ -1,0 +1,9 @@
+<template name="potlucklist">
+
+	<h4>Current Potlucks</h4>
+	<ul>
+		{{#each PotLuck}}
+			<li>{{this.name}}</li>
+		{{/each}}
+	</ul>
+</template>
