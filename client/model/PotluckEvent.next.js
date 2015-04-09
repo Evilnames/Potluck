@@ -1,83 +1,75 @@
-var name = Symbol('name'),
-	user = Symbol('user'),
-	date = Symbol('date'),
-	food = Symbol('food');
-export class PotluckEvent{
+var u = Symbol('user'),
+	d = Symbol('date'),
+	f = Symbol('food');
+export class PotluckEvent extends ModelBase{
 	constructor(
-		n='None',
-		d='None',
-		u={id:0,name:'None'},
-		f=[]
+		name='None',
+		date='None',
+		user={id:0,name:'None'},
+		food=[]
 		){
+		super(name);
 		console.log( 'PotluckEvent constructor', this );
 		// initial setting...
-		this[name] = n;
-		this[user] = u;
-		this[date] = d;
-		this[food] = f;
+		this[u] = user;
+		this[d] = date;
+		this[f] = food;
+	}
+
+	// setter and getter methods
+	set user(user){
+		// this[u] = user;
+		console.error('setting user is not allowed');
+	}
+	get user(){
+		return this[u].getInfo();
+	}
+
+	set date(date){
+		// TODO - get a date check condition
+		if( true ){
+			this[d] = date;
+		}
+		else{
+			console.error(`"${date}" is not a valid Date`);
+		}
+	}
+	get date(){
+		return this[d].toString();
+	}
+
+	set food(food){
+		//this[f] = food;
+		console.warn('setting food is not allowed');
+		console.info('Use PotluckEvent.addFood( food, user ) & PotluckEvent.removeFood( food, user )');
+	}
+	get food(){
+		return this[f].slice(0);
+	}
+
+	// methods
+	addFood( food, user ){
+		console.log( 'add food', food );
+		var arr = this[f];
+
+		arr[ arr.length ] = food;
+		return this;
+	}
+
+	removeFood( food, user ){
+		console.log( 'remove food', food );
+		var num = this[f].indexOf(food);
+		if( num !== -1 ){
+			this[f].splice( num, 1 );
+		}
+		else{
+			console.warn( `"${typeof food === 'string' ? food : food.name}" is not in the food list of Pot Luck Event "${this.name}"`, this );
+		}
+		return this;
 	}
 
 	getUserId(){
 		console.log('return user id');
-		return this[user].id;
-	}
-
-	// setter and getter methods
-	set name(n){
-		if( typeof n === 'string' && n.length > 0 ){
-			this[name] = n;
-		}
-		else{
-			console.log( `"${n}" is not valid Pot Luck Event Name` );
-		}
-	}
-	get name(){
-		return this[name];
-	}
-
-	set user(u){
-		// this[user] = u;
-		console.log('setting user is not allowed');
-	}
-	get user(){
-		return this[user];
-	}
-
-	set date(d){
-		// TODO - get a date check condition
-		if( true ){
-			this[date] = d;
-		}
-		else{
-			console.log(`"${d}" is not a valid date`);
-		}
-	}
-	get date(){
-		return this[date];
-	}
-
-	set food(f){
-		//this[food] = f;
-		console.log('setting food is not allowed');
-		console.log('Use PotluckEvent.addFood( f, user ) & PotluckEvent.removeFood( f, user )');
-	}
-	get food(){
-		return this[food];
-	}
-
-	addFood( f, user ){
-		this[food][ this[food].length ] = f;
-		return this;
-	}
-
-	removeFood( f, user ){
-		var num = this[food].indexOf(f);
-		if( num !== -1 ){
-			this[food].splice( num, 1 );
-		}
-		else{
-			console.log( `"${typeof f === 'string' ? f : f.name}" is not in the food list of Pot Luck Event "${this.name}"`, this );
-		}
-		return this;
+		return this[u].id.toString();
 	}
 }

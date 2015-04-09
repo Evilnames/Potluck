@@ -1,11 +1,20 @@
-var user = Symbol('user');
+var u = Symbol('user');
 export class FoodItem extends ModelBase{
 	constructor( 
-		n='None', 
-		u={id:0,name:''}
+		name='None', 
+		user={id:0,name:''}
 		){
-		super(n);
+		super(name);
 		console.log( 'FoodItem constructor', this );
-		this[user] = u;
+		this[u] = user;
+	}
+
+	// setter and getter methods
+	set user(user){
+		// this[u] = user;
+		console.error('setting user is not allowed');
+	}
+	get user(){
+		return this[u].getInfo();
 	}
 }
