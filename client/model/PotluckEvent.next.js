@@ -1,30 +1,20 @@
-var u = Symbol('user'),
-	d = Symbol('date'),
+var d = Symbol('date'),
 	f = Symbol('food');
 export class PotluckEvent extends ModelBase{
 	constructor(
 		name='None',
+		userId=0,
 		date='None',
-		user={id:0,name:'None'},
 		food=[]
 		){
-		super(name);
+		super(name,userId);
 		console.log( 'PotluckEvent constructor', this );
 		// initial setting...
-		this[u] = user;
 		this[d] = date;
 		this[f] = food;
 	}
 
 	// setter and getter methods
-	set user(user){
-		// this[u] = user;
-		console.error('setting user is not allowed');
-	}
-	get user(){
-		return this[u].getInfo();
-	}
-
 	set date(date){
 		// TODO - get a date check condition
 		if( true ){
@@ -66,10 +56,5 @@ export class PotluckEvent extends ModelBase{
 			console.warn( `"${typeof food === 'string' ? food : food.name}" is not in the food list of Pot Luck Event "${this.name}"`, this );
 		}
 		return this;
-	}
-
-	getUserId(){
-		console.log('return user id');
-		return this[u].id.toString();
 	}
 }
