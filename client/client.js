@@ -29,7 +29,7 @@ Template.potlucklist.helpers({
 });
 
 Template.potlucklist.events({
-    'click li': function(e) {
+    'click div.potluck-list-item': function(e) {
         //Go to this ID
         Router.go('/view/' + this._id);
     }
