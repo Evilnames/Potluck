@@ -1,9 +1,14 @@
 <template name="potlucklist">
-
-	<h4>Current Potlucks</h4>
-	<ul>
+	<div>Current Potlucks</div>
+	
+	<div class="potluck-list-container">
 		{{#each PotLuck}}
-			<li>{{this.name}}</li>
+			<div class="potluck-list-item">
+				<div>
+					<div>{{this.eventDate}}</div>
+					<div>{{this.name}}</div>
+				</div>
+			</div>
 		{{/each}}
-	</ul>
+	</div>
 </template>
