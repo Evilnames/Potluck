@@ -23,8 +23,8 @@ label, input {
 
 #NewPotLuckBtn{
     position:absolute;
-    left:615px;
-    top:65px;
+    left:650px;
+    top:40px;
     padding:15px;
     border-radius:15px;
     background-color:#FF0066;
@@ -61,11 +61,13 @@ label, input {
     background-color:#3366FF;
 }
 .potluck-app-header{
-    color:#EBF0FF;
+    color:#FFFFFF;
+    text-transform: uppercase;
     padding:10px;
-    font-size:30px;
+    font-size:50px;
     height:50px;
-    left:30px;
+    left:50px;
+    top:20px;
     right:0;
     position:relative;
 }
@@ -118,7 +120,7 @@ label, input {
   position: relative;
   font-size: 20px;
   line-height:35px;
-  margin-top: 20px;
-  margin-left:300px;
+  margin-top: 15px;
+  margin-left:350px;
   right:0;
 }
