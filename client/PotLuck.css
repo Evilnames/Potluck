@@ -21,41 +21,19 @@ label, input {
     padding:10px 0;
 }
 
-.potluck-app{
-    min-width:200px;
-    position:absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    background-color:rgb(200,150,150);
-}
-.potluck-app-header{
-    color:rgba(0,0,0,0.5);
-    padding:10px;
-    font-size:24px;
-    height:50px;
-    left:0;
-    right:0;
-    position:relative;
-}
-.potluck-app-header > *{
-    display:table-cell;
-}
-
 #NewPotLuckBtn{
     position:absolute;
-    right:10px;
-    top:10px;
+    left:650px;
+    top:40px;
     padding:15px;
     border-radius:15px;
-    background-color:rgba(255,255,255,0.5);
+    background-color:#FF0066;
     cursor:pointer;
 }
 #NewPotLuckBtn:before,
 #NewPotLuckBtn:after{
     content:"";
-    background-color:rgb(200,150,150);
+    background-color:#FFB2D1;
     position:absolute;
 }
 #NewPotLuckBtn:before{
@@ -73,7 +51,29 @@ label, input {
     width:2px;
 }
 
-
+.potluck-app{
+    min-width:200px;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:#3366FF;
+}
+.potluck-app-header{
+    color:#FFFFFF;
+    text-transform: uppercase;
+    padding:10px;
+    font-size:50px;
+    height:50px;
+    left:50px;
+    top:20px;
+    right:0;
+    position:relative;
+}
+.potluck-app-header > *{
+    display:table-cell;
+}
 
 .potluck-app-body{
     position:absolute;
@@ -81,7 +81,7 @@ label, input {
     background-color:rgba(255,255,255,0.75);
     left:0;
     right:0;
-    top:50px;
+    top:100px;
     bottom:0;
     overflow-y:auto;
     overflow-x:hidden;
@@ -91,25 +91,36 @@ label, input {
     background-color:rgb(240,240,240);
 }
 .potluck-list-item{
+    color: #FFFFFF;
     float:left;
-    margin:0;
-    padding:5px;
+    margin:30px;
+    padding:50px;
     width:200px;
     height:200px;
     position:relative;
 }
 .potluck-list-item > div{
     position:relative;
-    background-color:rgba(200,150,150,0.5);
+    background-color: #3366FF;
+    padding:10px;
     width:100%;
     height:100%;
-    border-radius:50%;
+    border-radius:20%;
 }
 .potluck-list-item > div > *{
     width:100%;
     text-align:center;
-    color:rgba(0,0,0,0.75);
+    color: #FFFFFF;
     font-weight:bold;
     font-size:20px;
-    padding:20px 0px;
+    padding:35px 0px 0px 0px;
+}
+
+.titleInstructions{
+  position: relative;
+  font-size: 20px;
+  line-height:35px;
+  margin-top: 15px;
+  margin-left:350px;
+  right:0;
 }
